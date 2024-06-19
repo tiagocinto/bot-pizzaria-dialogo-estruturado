@@ -1,0 +1,54 @@
+version: "2.0"
+
+nlu:
+- intent: greet
+  examples: |
+    - Olá
+    - Oi
+    - Boa tarde
+    - Boa noite
+  
+- intent: informar_borda
+  examples: |
+    - [recheada](borda)
+    - [comum](borda)
+    - quero [recheada](borda)
+    - quero [comum](borda)
+    - quero borda [recheada](borda)
+    - quero borda [comum](borda)
+    - borda [recheada](borda)
+    - borda [comum](borda)
+
+- intent: informar_sabor
+  examples: |
+    - [mussarela](sabor)
+    - [frango com catupiry](sabor)
+    - [quatro queijos](sabor)
+    - quero [mussarela](sabor)
+    - quero [frango com catupiry](sabor)
+    - quero [quatro queijos](sabor)
+    - quero pizza de [mussarela](sabor)
+    - quero pizza de [frango com catupiry](sabor)
+    - quero pizza de [quatro queijos](sabor)
+    - pizza de [mussarela](sabor)
+    - pizza de [frango com catupiry](sabor)
+    - pizza de [quatro queijos](sabor)
+
+- intent: informar_tamanho
+  examples: |
+    - quero pizza [pequena](tamanho)
+    - quero pizza [média](tamanho)
+    - quero pizza [grande](tamanho)
+    - pizza [pequena](tamanho)
+    - pizza [média](tamanho)
+    - pizza [grande](tamanho)
+    - [pequena](tamanho)
+    - [média](tamanho)
+    - [grande](tamanho)
+
+- intent: thankyou
+  examples: |
+    - Obrigado!
+    - Vlw
+    - Muito obrigado
+    - Valeu

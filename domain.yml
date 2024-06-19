@@ -1,0 +1,63 @@
+version: "2.0"
+    
+intents:
+  - greet
+  - informar_sabor
+  - informar_tamanho
+  - informar_borda
+  - thankyou
+  
+entities:
+  - tamanho
+  - sabor
+  - borda
+
+responses:
+  utter_greet:
+  - text: "Oi! Bem vindo à Pizzaria do IF/Feliz. Faça agora seu pedido!"
+  
+  utter_listar_tamanhos: 
+  - text: "Temos pizzas pequenas (4 pedaços), médias (6 pedaços) e grandes (8 pedaços). Qual tamanho tu gostaria?"
+  
+  utter_listar_sabores: 
+  - text: "Temos pizza de quatro queijos, frango com catupiry e mussarela. Qual sabor tu gostaria?"
+  
+  utter_listar_bordas: 
+  - text: "Temos borda recheada e comum. Qual borda tu gostaria?"
+
+  utter_informar_borda:
+  - text: "Ok, anotado, pizza {tamanho} de {sabor} com borda {borda}."
+  
+  utter_informar_sabor:
+  - text: "Ok, anotado, pizza {tamanho} de {sabor}."
+
+  utter_informar_tamanho:
+  - text: "Ok, anotado, pizza {tamanho}."
+
+  utter_despedida:
+  - text: "Tchau! até a próxima! =) "
+
+
+slots:
+  sabor:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: sabor
+  tamanho:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: tamanho
+  borda:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: borda
+    
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

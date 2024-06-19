@@ -1,0 +1,23 @@
+version: "2.0"
+
+stories:
+
+- story: fazer pedido completo estruturado
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_listar_tamanhos
+  - intent: informar_tamanho
+  - slot_was_set:
+    - tamanho
+  - action: utter_informar_tamanho
+  - action: utter_listar_sabores
+  - intent: informar_sabor
+  - slot_was_set:
+    - sabor
+  - action: utter_informar_sabor
+  - action: utter_listar_bordas
+  - intent: informar_borda
+  - slot_was_set:
+    - borda
+  - action: utter_informar_borda
